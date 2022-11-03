@@ -1,7 +1,6 @@
 package org.example;
 
 import junit.framework.TestCase;
-import org.junit.Test;
 
 import java.util.UUID;
 
@@ -76,7 +75,7 @@ public class ComputerTest extends TestCase {
         pc.turnOn();
 
         // then
-        assertThatThrownBy(() -> { pc.setRam(24); }).hasMessage("Turn off pc first");
+        assertThatThrownBy(() -> pc.setRam(24)).hasMessage("Turn off pc first");
     }
 
     public void testSetCores() {
@@ -98,7 +97,7 @@ public class ComputerTest extends TestCase {
         pc.turnOn();
 
         // then
-        assertThatThrownBy(() -> { pc.setCores(12); }).hasMessage("Turn off pc first");
+        assertThatThrownBy(() -> pc.setCores(12)).hasMessage("Turn off pc first");
     }
 
     public void testSetOperatingSystem() {
