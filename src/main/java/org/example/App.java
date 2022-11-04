@@ -11,15 +11,15 @@ public class App {
 
   public static void main(String[] args) {
 
-    Computer computer = new Computer(16, 4, "Acer", OperatingSystem.Windows);
+    Computer computer = new Computer(16, 4, "Acer", OperatingSystem.WINDOWS);
+    computer.turnOn();
     System.out.println(computer);
 
     Computer computer1 = Computer.builder()
         .ram(16)
         .cores(4)
         .name("Lenovo")
-        .operatingSystem(OperatingSystem.Linux)
-        .number()
+        .operatingSystem(OperatingSystem.LINUX)
         .build();
 
     System.out.println(computer1);
