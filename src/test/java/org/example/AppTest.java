@@ -24,7 +24,8 @@ public class AppTest
         int[][] newMatrix = App.transpose(matrix);
 
         // then
-        assertThat(newMatrix).isDeepEqualTo(new int[][]{{1, 4}, {2, 5}, {3, 6}});
+        assertThat(newMatrix).hasDimensions(3, 2)
+                .isDeepEqualTo(new int[][]{{1, 4}, {2, 5}, {3, 6}});
     }
 
     public void testRotate() {
@@ -38,6 +39,7 @@ public class AppTest
         int[][] newMatrix = App.rotate(matrix);
 
         // then
-        assertThat(newMatrix).isDeepEqualTo(new int[][]{{4, 1}, {5, 2}, {6, 3}});
+        assertThat(newMatrix).hasDimensions(3, 2)
+                .isDeepEqualTo(new int[][]{{4, 1}, {5, 2}, {6, 3}});
     }
 }
