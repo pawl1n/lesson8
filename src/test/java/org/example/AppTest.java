@@ -4,35 +4,40 @@ import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
 
+import static org.assertj.core.api.Assertions.assertThat;
+
 /**
  * Unit test for simple App.
  */
 public class AppTest 
     extends TestCase
 {
-    /**
-     * Create the test case
-     *
-     * @param testName name of the test case
-     */
-    public AppTest( String testName )
-    {
-        super( testName );
+
+    public void testTranspose() {
+        // given
+        int[][] matrix = {
+                {1, 2, 3},
+                {4, 5, 6}
+        };
+
+        // when
+        int[][] newMatrix = App.transpose(matrix);
+
+        // then
+        assertThat(newMatrix).isDeepEqualTo(new int[][]{{1, 4}, {2, 5}, {3, 6}});
     }
 
-    /**
-     * @return the suite of tests being tested
-     */
-    public static Test suite()
-    {
-        return new TestSuite( AppTest.class );
-    }
+    public void testRotate() {
+        // given
+        int[][] matrix = {
+                {1, 2, 3},
+                {4, 5, 6}
+        };
 
-    /**
-     * Rigourous Test :-)
-     */
-    public void testApp()
-    {
-        assertTrue( true );
+        // when
+        int[][] newMatrix = App.rotate(matrix);
+
+        // then
+        assertThat(newMatrix).isDeepEqualTo(new int[][]{{4, 1}, {5, 2}, {6, 3}});
     }
 }
