@@ -47,6 +47,47 @@ public class App {
     System.out.println(result);
 
     System.out.println(Arrays.toString(deleteElement(arr, 1)));
+
+    // matrix task
+    int[][] matrix = {
+            {1, 2, 3},
+            {4, 5, 6}
+    };
+    System.out.println(Arrays.deepToString(matrix));
+    System.out.println(Arrays.deepToString(transpose(matrix)));
+    System.out.println(Arrays.deepToString(rotate(matrix)));
+  }
+
+  public static int[][] transpose(int[][] matrix) {
+    int[][] newMatrix = new int[matrix[0].length][];
+
+    for (int i = 0; i < newMatrix.length; i++) {
+      newMatrix[i] = new int[matrix.length];
+    }
+
+    for (int i = 0; i < matrix.length; i++) {
+      for (int j = 0; j < matrix[i].length; j++) {
+        newMatrix[j][i] = matrix[i][j];
+      }
+    }
+
+    return newMatrix;
+  }
+
+  public static int[][] rotate(int[][] matrix) {
+    int[][] newMatrix = new int[matrix[0].length][];
+
+    for (int i = 0; i < newMatrix.length; i++) {
+      newMatrix[i] = new int[matrix.length];
+    }
+
+    for (int i = 0; i < matrix.length; i++) {
+      for (int j = 0; j < matrix[i].length; j++) {
+        newMatrix[j][matrix.length - 1 - i] = matrix[i][j];
+      }
+    }
+
+    return newMatrix;
   }
 
   public static int[] deleteElement(int[] arr, int number) {
